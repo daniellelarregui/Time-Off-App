@@ -1,0 +1,23 @@
+modules:
+  macro:
+    - key: time-off-app-hello-world
+      resource: main
+      resolver:
+        function: resolver
+      title: Time-Off-App
+      description: Submit or approve time off
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/fa7a16ba-2b61-4bb6-b561-c4838596f5f4
+permissions:
+  scopes:
+    - storage:app
